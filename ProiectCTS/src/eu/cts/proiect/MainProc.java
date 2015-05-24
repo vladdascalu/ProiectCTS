@@ -6,29 +6,17 @@ import java.io.InputStreamReader;
 import java.util.Date;
 
 public class MainProc {
-
+	public static boolean isFinished; 
 	public static void main(String[] args) {
 		LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": A inceput programul");
-		Factory factory = new Factory();
-		Activity activity = null;
-		String line = "";
-		System.out.println("Creeaza o noua activitate:\nCe fel de activitate vrei sa creezi? Scrie sedinta pentru sedinta si sarcina pentru sarcina.");
 		
-		while (activity == null) {
-			line = readFromConsole();
-			if(line.toLowerCase().equals("sedinta"))
-				activity = factory.createActivity(Activities.meeting);
-			else if(line.toLowerCase().equals("sarcina"))
-				activity = factory.createActivity(Activities.task);
-			else
-				System.out.println("Scrie sedinta pentru sedinta si sarcina pentru sarcina!");
-			}
+		Activity activity = chooseActivity();
 		
 		if (activity instanceof Meeting) {
 			System.out.println("S-a creat o sedinta.");
 			LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a creat o sedinta.");
 			MeetingBuilder mb = new MeetingBuilder();
-			boolean isFinished = false;
+			isFinished = false;
 			while (!isFinished) {
 				System.out.println("Doresti sa adaugi data pentru sedinta salvata? Da sau nu.");
 				String buffer = readFromConsole();
@@ -108,6 +96,9 @@ public class MainProc {
 			
 			System.out.println(activity.toString());
 		}
+		
+		
+		
 		else if (activity instanceof Task) {
 			System.out.println("S-a creat o sarcina.");
 			LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a creat o sarcina.");
@@ -174,18 +165,19 @@ public class MainProc {
 			}
 			isFinished = false;
 			activity = tb.build();
-		
-		
+			System.out.println(activity.toString());
 		}
-		
 	}
+	
+	
+	
+	
 	
 	@SuppressWarnings("deprecation")
 	public static Date readDateFromConsole(){
 		Date readedDate = null;
 		int an = -1, luna = -1, data = -1, ora = -1, minute = -1;
 
-		
 		while (an == -1){
 			System.out.println("Introdu anul in cifre:");
 			try {
@@ -203,7 +195,6 @@ public class MainProc {
 			}
 		}
 		
-		
 		int nrMaximZile;
 		if(luna == 1 || luna == 3 || luna == 5 || luna == 7 || luna == 8 || luna == 10 || luna == 12)
 			nrMaximZile = 31;
@@ -219,7 +210,6 @@ public class MainProc {
 			}
 		}
 		
-		
 		while (ora == -1 || ora > 24){
 			System.out.println("Introdu ora in cifre:");
 			try {
@@ -227,7 +217,6 @@ public class MainProc {
 			} catch (Exception e){
 			}
 		}
-		
 		
 		while (minute == -1 || minute > 59) {
 			System.out.println("Introdu minutele in cifre:");
@@ -247,12 +236,31 @@ public class MainProc {
 	public static String readFromConsole(){
 		String s = "";
 		try{
-		    BufferedReader bufferRead = new BufferedReader(new InputStreamReader(System.in));
+			InputStreamReader isr = new InputStreamReader(System.in);
+		    BufferedReader bufferRead = new BufferedReader(isr);
 		    s = bufferRead.readLine();
 		}
 		catch(IOException e){
 			e.printStackTrace();
 		}
 		return s;
+	}
+	
+	public static Activity chooseActivity(){
+		Activity activity = null;
+		Factory factory = new Factory();
+		String line = "";
+		System.out.println("Creeaza o noua activitate:\nCe fel de activitate vrei sa creezi? Scrie sedinta pentru sedinta si sarcina pentru sarcina.");
+		
+		while (activity == null) {
+			line = readFromConsole();
+			if(line.toLowerCase().equals("sedinta"))
+				activity = factory.createActivity(Activities.meeting);
+			else if(line.toLowerCase().equals("sarcina"))
+				activity = factory.createActivity(Activities.task);
+			else
+				System.out.println("Scrie sedinta pentru sedinta si sarcina pentru sarcina!");
+			}
+		return activity;
 	}
 }
