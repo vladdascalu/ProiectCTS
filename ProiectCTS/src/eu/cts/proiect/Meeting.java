@@ -1,18 +1,16 @@
 package eu.cts.proiect;
 
-import java.util.List;
-
 public class Meeting extends Activity{
-	private List<String> participants = null;
+	private String participants = null;
 	private int priority;
 	private long durationMillis;
 	private String comment;
 
-	public List<String> getParticipants() {
+	public String getParticipants() {
 		return participants;
 	}
 
-	public void setParticipants(List<String> participants) {
+	public void setParticipants(String participants) {
 		this.participants = participants;
 	}
 
@@ -38,5 +36,12 @@ public class Meeting extends Activity{
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	@Override
+	public String toString() {
+		return "Meeting [participants=" + participants + ", priority="
+				+ priority + ", durationMillis=" + durationMillis
+				+ ", comment=" + comment + "]";
 	}
 }

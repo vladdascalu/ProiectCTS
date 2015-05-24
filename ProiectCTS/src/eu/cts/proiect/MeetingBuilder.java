@@ -1,13 +1,12 @@
 package eu.cts.proiect;
 
 import java.util.Date;
-import java.util.List;
 
 public class MeetingBuilder {
 	Meeting meeting = new Meeting();
 	
 	
-	public MeetingBuilder setParticipants(List<String> participants){
+	public MeetingBuilder setParticipants(String participants){
 		this.meeting.setParticipants(participants);
 		return this;
 	}

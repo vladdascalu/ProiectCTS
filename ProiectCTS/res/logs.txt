@@ -1,0 +1,14 @@
+Sun May 24 21:26:08 EEST 2015: a inceput programul
+Sun May 24 21:35:49 EEST 2015: a inceput programul
+Sun May 24 21:35:51 EEST 2015: S-a creat o sedinta.
+Sun May 24 21:35:58 EEST 2015: a inceput programul
+Sun May 24 21:36:01 EEST 2015: S-a creat o sedinta.
+Sun May 24 21:36:28 EEST 2015: a inceput programul
+Sun May 24 21:36:32 EEST 2015: S-a creat o sedinta.
+Sun May 24 21:37:24 EEST 2015: a inceput programul
+Sun May 24 21:37:27 EEST 2015: S-a creat o sedinta.
+Sun May 24 21:55:25 EEST 2015: A inceput programul
+Sun May 24 21:56:44 EEST 2015: A inceput programul
+Sun May 24 21:56:47 EEST 2015: S-a creat o sedinta.
+Sun May 24 21:57:16 EEST 2015: A inceput programul
+Sun May 24 21:57:21 EEST 2015: S-a creat o sedinta.
