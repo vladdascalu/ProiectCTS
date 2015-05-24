@@ -12,3 +12,10 @@ Sun May 24 21:56:44 EEST 2015: A inceput programul
 Sun May 24 21:56:47 EEST 2015: S-a creat o sedinta.
 Sun May 24 21:57:16 EEST 2015: A inceput programul
 Sun May 24 21:57:21 EEST 2015: S-a creat o sedinta.
+Sun May 24 22:16:04 EEST 2015: A inceput programul
+Sun May 24 22:16:07 EEST 2015: S-a creat o sedinta.
+Sun May 24 22:16:16 EEST 2015: S-a adaugat data Fri Mar 02 02:02:00 EET 2001
+Sun May 24 22:16:31 EEST 2015: S-a adaugat comentariul: Cea mai sedinta misto.
+Sun May 24 22:16:37 EEST 2015: S-a adaugat prioritatea 0.
+Sun May 24 22:16:43 EEST 2015: S-au adaugat participantii: eu si cu mine.
+Sun May 24 22:16:52 EEST 2015: S-a adaugat durata: 180000.

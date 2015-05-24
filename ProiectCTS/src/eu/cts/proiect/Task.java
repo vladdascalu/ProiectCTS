@@ -23,4 +23,10 @@ public class Task extends Activity{
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	@Override
+	public String toString() {
+		return "Task [priority=" + priority + ", durationMillis="
+				+ durationMillis + ", comment=" + comment
+				+ ", date= " + getdateAndTime() + "]";
+	}
 }

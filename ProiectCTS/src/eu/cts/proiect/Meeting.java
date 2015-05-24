@@ -40,7 +40,7 @@ public class Meeting extends Activity{
 
 	@Override
 	public String toString() {
-		return "Meeting [participants=" + participants + ", priority="
+		return "Meeting [participants=" + participants +", date: "+getdateAndTime()+ ", priority="
 				+ priority + ", durationMillis=" + durationMillis
 				+ ", comment=" + comment + "]";
 	}

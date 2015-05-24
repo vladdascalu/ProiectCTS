@@ -14,7 +14,6 @@ public class MainProc {
 		String line = "";
 		System.out.println("Creeaza o noua activitate:\nCe fel de activitate vrei sa creezi? Scrie sedinta pentru sedinta si sarcina pentru sarcina.");
 		
-		
 		while (activity == null) {
 			line = readFromConsole();
 			if(line.toLowerCase().equals("sedinta"))
@@ -24,7 +23,6 @@ public class MainProc {
 			else
 				System.out.println("Scrie sedinta pentru sedinta si sarcina pentru sarcina!");
 			}
-		
 		
 		if (activity instanceof Meeting) {
 			System.out.println("S-a creat o sedinta.");
@@ -42,7 +40,6 @@ public class MainProc {
 					isFinished = true;
 			}
 			isFinished = false;
-			
 			
 			while (!isFinished) {
 				System.out.println("Doresti sa adaugi descriere pentru sedinta salvata? Da sau nu.");
@@ -109,32 +106,74 @@ public class MainProc {
 			
 			activity = mb.build();
 			
-			
-			
 			System.out.println(activity.toString());
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-					
 		}
 		else if (activity instanceof Task) {
 			System.out.println("S-a creat o sarcina.");
+			LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a creat o sarcina.");
+			TaskBuilder tb = new TaskBuilder();
+			boolean isFinished = false;
+			while (!isFinished) {
+				System.out.println("Doresti sa adaugi data pentru sarcina salvata? Da sau nu.");
+				String buffer = readFromConsole();
+				
+				if (buffer.toLowerCase().equals("da")) {
+					tb.setDate(readDateFromConsole());
+					isFinished = true;
+				} else if (buffer.toLowerCase().equals("nu"))
+					isFinished = true;
+			}
+			isFinished = false;
 			
+			while (!isFinished) {
+				System.out.println("Doresti sa adaugi descriere pentru sarcina salvata? Da sau nu.");
+				String buffer = readFromConsole();
+				
+				if (buffer.toLowerCase().equals("da")) {
+					tb.setComment(readFromConsole());
+					LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a adaugat comentariul: "+tb.task.getComment()+".");
+					isFinished = true;
+				} else if (buffer.toLowerCase().equals("nu"))
+					isFinished = true;
+			}
+			isFinished = false;
 			
-
+			while (!isFinished) {
+				System.out.println("Doresti sa adaugi prioritate pentru sarcina salvata? Da sau nu.");
+				String buffer = readFromConsole();
+				int prioritate;
+				if (buffer.toLowerCase().equals("da")) {
+					while (!isFinished){
+						try{
+							System.out.println("Prioritatea se noteaza de la 4 (neimportant) la 0 (foarte important).");
+							prioritate = Integer.parseInt(readFromConsole());
+							if (prioritate > -1 && prioritate < 5) {
+								tb.setPriority(prioritate);
+								LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a adaugat prioritatea "+prioritate+".");
+								isFinished = true;
+							}
+						} catch (Exception e){}
+					}
+					isFinished = true;
+				} else if (buffer.toLowerCase().equals("nu"))
+					isFinished = true;
+			}
+			isFinished = false;
+			
+			while (!isFinished) {
+				System.out.println("Doresti sa adaugi durata pentru sedinta salvata? Da sau nu.");
+				String buffer = readFromConsole();
+				
+				if (buffer.toLowerCase().equals("da")) {
+					System.out.println("Introduceti durata in minute.");
+					tb.setDurationMillis((Integer.parseInt(readFromConsole())*60000));
+					LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a adaugat durata: "+tb.task.getDurationMillis()+".");
+					isFinished = true;
+				} else if (buffer.toLowerCase().equals("nu"))
+					isFinished = true;
+			}
+			isFinished = false;
+			activity = tb.build();
 		
 		
 		}
