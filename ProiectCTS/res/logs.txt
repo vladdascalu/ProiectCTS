@@ -21,3 +21,6 @@ Sun May 24 22:16:43 EEST 2015: S-au adaugat participantii: eu si cu mine.
 Sun May 24 22:16:52 EEST 2015: S-a adaugat durata: 180000.
 Sun May 24 23:05:16 EEST 2015: A inceput programul
 Sun May 24 23:05:19 EEST 2015: S-a creat o sedinta.
+testLog
+testLog
+testLog

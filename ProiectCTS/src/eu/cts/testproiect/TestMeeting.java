@@ -100,6 +100,109 @@ public class TestMeeting {
 		assertEquals("123321123321", meeting.getParticipants());
 	}
 	
+	//functia 6
+	@Test //test 19
+	public void testSetPriority0(){
+		meeting.setPriority(0);
+		assertEquals(0, meeting.getPriority());
+	}
+	
+	@Test //test 20
+	public void testSetPriority1(){
+		meeting.setPriority(1);
+		assertEquals(1, meeting.getPriority());
+	}
+	
+	@Test //test 21
+	public void testSetPriority2(){
+		meeting.setPriority(2);
+		assertEquals(2, meeting.getPriority());
+	}
+	
+	@Test //test 22
+	public void testSetPriority3(){
+		meeting.setPriority(3);
+		assertEquals(3, meeting.getPriority());
+	}
+	
+	@Test //test 23
+	public void testSetPriority4(){
+		meeting.setPriority(4);
+		assertEquals(4, meeting.getPriority());
+	}
+	
+	//functia 7
+	@Test //test 24
+	public void testSetDurationMillisNormalValues() {
+		meeting.setDurationMillis(1000000L);
+		assertEquals(1000000L, meeting.getDurationMillis());
+	}
+	
+	@Test //test 25
+	public void testSetDurationMillisZeroValue() {
+		meeting.setDurationMillis(0);
+		assertEquals(0, meeting.getDurationMillis());
+	}
+	
+	//functia 8
+	@Test //test 26
+	public void testSetCommentNormalValues() {
+		meeting.setComment("un comentariu normal.");
+		assertEquals("un comentariu normal.", meeting.getComment());
+	}
+	
+	@Test //test 27
+	public void testSetCommentNumericValues() {
+		meeting.setComment("12345678987654321");
+		assertEquals("12345678987654321", meeting.getComment());
+	}
+	
+	@Test //test 28
+	public void testSetCommentNoString() {
+		meeting.setComment("");
+		assertEquals("", meeting.getComment());
+	}
+	
+	@Test //test 29
+	public void testSetCommentAbsurdValues() {
+		String comm = "comment1 " +"comment2 "+"comment3 "+"comment4 "+"comment5 "+"comment6 "+"comment7 "+"comment8 "+
+						"comment9 "+"comment10 "+"comment11 "+"comment12 "+"comment13 "+"comment14 "+"comment15 "+"comment16 "+
+						"comment17 "+"comment18 "+"comment19 "+"comment20 "+"comment21 "+"comment22 "+"comment23 "+"comment24 "+
+						"comment25 "+"comment26 "+"comment27 "+"comment28 "+"comment29 "+"comment30 "+"comment31 "+"comment32 "+
+						"comment33 "+"comment34 "+"comment35 "+"comment36 "+"comment37 "+"comment38 "+"comment39 "+"comment40 "+
+						"comment41 "+"comment42 "+"comment43 "+"comment44 "+"comment45 "+"comment46 "+"comment47 "+"comment48 "+
+						"comment49 "+"comment50 "+"comment51 "+"comment52 "+"comment53 "+"comment54 "+"comment55 "+"comment56 "+
+						"comment57 "+"comment58 "+"comment59 "+"comment60 "+"comment61 "+"comment62 "+"comment63 "+"comment64 "+
+						"comment65 "+"comment66 "+"comment67 "+"comment68 "+"comment69 "+"comment70 "+"comment71 "+"comment72 "+
+						"comment73 "+"comment74 "+"comment75 "+"comment76 "+"comment77 "+"comment78 "+"comment79 "+"comment80 "+
+						"comment81 "+"comment82 "+"comment83 " + "comment1 " +"comment2 "+"comment3 "+"comment4 "+"comment5 "+"comment6 "+"comment7 "+"comment8 "+
+						"comment9 "+"comment10 "+"comment11 "+"comment12 "+"comment13 "+"comment14 "+"comment15 "+"comment16 "+
+						"comment17 "+"comment18 "+"comment19 "+"comment20 "+"comment21 "+"comment22 "+"comment23 "+"comment24 "+
+						"comment25 "+"comment26 "+"comment27 "+"comment28 "+"comment29 "+"comment30 "+"comment31 "+"comment32 "+
+						"comment33 "+"comment34 "+"comment35 "+"comment36 "+"comment37 "+"comment38 "+"comment39 "+"comment40 "+
+						"comment41 "+"comment42 "+"comment43 "+"comment44 "+"comment45 "+"comment46 "+"comment47 "+"comment48 "+
+						"comment49 "+"comment50 "+"comment51 "+"comment52 "+"comment53 "+"comment54 "+"comment55 "+"comment56 "+
+						"comment57 "+"comment58 "+"comment59 "+"comment60 "+"comment61 "+"comment62 "+"comment63 "+"comment64 "+
+						"comment65 "+"comment66 "+"comment67 "+"comment68 "+"comment69 "+"comment70 "+"comment71 "+"comment72 "+
+						"comment73 "+"comment74 "+"comment75 "+"comment76 "+"comment77 "+"comment78 "+"comment79 "+"comment80 "+
+						"comment81 "+"comment82 "+"comment83 "+"comment1 " +"comment2 "+"comment3 "+"comment4 "+"comment5 "+"comment6 "+"comment7 "+"comment8 "+
+						"comment9 "+"comment10 "+"comment11 "+"comment12 "+"comment13 "+"comment14 "+"comment15 "+"comment16 "+
+						"comment17 "+"comment18 "+"comment19 "+"comment20 "+"comment21 "+"comment22 "+"comment23 "+"comment24 "+
+						"comment25 "+"comment26 "+"comment27 "+"comment28 "+"comment29 "+"comment30 "+"comment31 "+"comment32 "+
+						"comment33 "+"comment34 "+"comment35 "+"comment36 "+"comment37 "+"comment38 "+"comment39 "+"comment40 "+
+						"comment41 "+"comment42 "+"comment43 "+"comment44 "+"comment45 "+"comment46 "+"comment47 "+"comment48 "+
+						"comment49 "+"comment50 "+"comment51 "+"comment52 "+"comment53 "+"comment54 "+"comment55 "+"comment56 "+
+						"comment57 "+"comment58 "+"comment59 "+"comment60 "+"comment61 "+"comment62 "+"comment63 "+"comment64 "+
+						"comment65 "+"comment66 "+"comment67 "+"comment68 "+"comment69 "+"comment70 "+"comment71 "+"comment72 "+
+						"comment73 "+"comment74 "+"comment75 "+"comment76 "+"comment77 "+"comment78 "+"comment79 "+"comment80 "+
+						"comment81 "+"comment82 "+"comment83 ";
+		meeting.setComment(comm);
+		assertEquals(comm, meeting.getComment());
+	}
+	
+	
+	
+	
 	
 
 }
