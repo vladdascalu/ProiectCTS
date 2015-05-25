@@ -16,12 +16,12 @@ import eu.cts.proiect.Meeting;
 import eu.cts.proiect.Task;
 
 public class TestMain {
-	String[] testStrings;
-	FileReader fr;
-	BufferedReader br;
+	static String[] testStrings;
+	static FileReader fr;
+	static BufferedReader br;
 	
 	@BeforeClass
-	public void setUpBeforeClass() throws Exception{
+	public static void setUpBeforeClass() throws Exception{
 		fr = new FileReader("res/TestFileReadFromConsole.txt");
 		br = new BufferedReader(fr);
 		testStrings = br.readLine().split(",");

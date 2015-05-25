@@ -24,3 +24,7 @@ Sun May 24 23:05:19 EEST 2015: S-a creat o sedinta.
 testLog
 testLog
 testLog
+testLog
+testLog
+testLog
+testLog
