@@ -16,7 +16,7 @@ import org.junit.Test;
 import eu.cts.proiect.LoggerSingleton;
 
 public class TestLoggerSingleton {
-
+//test LoggerSingleton
 	LoggerSingleton logger;
 	
 	@Before
