@@ -8,22 +8,28 @@ import java.io.IOException;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
-import eu.cts.proiect.Activity;
-import eu.cts.proiect.Factory;
 import eu.cts.proiect.MainProc;
 import eu.cts.proiect.Meeting;
 import eu.cts.proiect.Task;
 
 public class TestMain {
 	String[] testStrings;
+	FileReader fr;
+	BufferedReader br;
+	
+	@BeforeClass
+	public void setUpBeforeClass() throws Exception{
+		fr = new FileReader("res/TestFileReadFromConsole.txt");
+		br = new BufferedReader(fr);
+		testStrings = br.readLine().split(",");
+	}
+	
 	@Before
 	public void setUp() throws Exception {
-		FileReader fr = new FileReader("res/TestFileReadFromConsole.txt");
-		@SuppressWarnings("resource")
-		BufferedReader br = new BufferedReader(fr);
-		testStrings = br.readLine().split(",");
+		
 	}
 
 	@After
@@ -32,39 +38,39 @@ public class TestMain {
 	}
 
 	//functia 1
-	@Test
+	@Test //test 1
 	public void testReadFromConsoleNumericValues1() throws IOException {
 		assertEquals("Not working properly", testStrings[0], MainProc.readFromConsole());
 	}
 	
-	@Test
+	@Test //test 2
 	public void testReadFromConsoleNumericValues2(){
 		assertEquals("Not working properly", testStrings[1], MainProc.readFromConsole());
 	}
 	
-	@Test
+	@Test //test 3
 	public void testReadFromConsoleNonNumericValues(){
 		assertEquals("Not working properly", testStrings[2], MainProc.readFromConsole());
 	}
 	
-	@Test
+	@Test //test 4
 	public void testReadFromConsoleNonNumericValues2(){
 		assertEquals("Not working properly", testStrings[3], MainProc.readFromConsole());
 	}
 	
-	@Test
+	@Test //test 5
 	public void testReadFromConsoleEmptyString(){
 		assertEquals("", MainProc.readFromConsole());
 	}
 	
-	@Test
+	@Test //test 6
 	public void testReadFromConsoleSpecialChars(){
 		assertEquals("\\n",MainProc.readFromConsole());
 	}
 	
 	
 	//functia 2
-	@Test
+	@Test //test 7
 	public void testChooseActivity(){
 		assertTrue((MainProc.chooseActivity() instanceof Meeting) || (MainProc.chooseActivity() instanceof Task));
 	}
