@@ -84,7 +84,12 @@ public class MainProc {
 				
 				if (buffer.toLowerCase().equals("da")) {
 					System.out.println("Introduceti durata in minute.");
-					mb.setDurationMillis((Integer.parseInt(readFromConsole())*60000));
+					long durata = (Integer.parseInt(readFromConsole())*60000);
+					while (durata < 0) {
+						System.out.println("Introduceti o valoare pozitiva. Durata nu poate fi negativa!");
+						durata = (Integer.parseInt(readFromConsole())*60000);
+					}
+					mb.setDurationMillis(durata);
 					LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a adaugat durata: "+mb.meeting.getDurationMillis()+".");
 					isFinished = true;
 				} else if (buffer.toLowerCase().equals("nu"))
@@ -157,6 +162,11 @@ public class MainProc {
 				
 				if (buffer.toLowerCase().equals("da")) {
 					System.out.println("Introduceti durata in minute.");
+					long durata = (Integer.parseInt(readFromConsole())*60000);
+					while (durata < 0) {
+						System.out.println("Introduceti o valoare pozitiva. Durata nu poate fi negativa!");
+						durata = (Integer.parseInt(readFromConsole())*60000);
+					}
 					tb.setDurationMillis((Integer.parseInt(readFromConsole())*60000));
 					LoggerSingleton.ScrieLogInFisier(new Date(System.currentTimeMillis()).toString()+": S-a adaugat durata: "+tb.task.getDurationMillis()+".");
 					isFinished = true;
