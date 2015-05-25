@@ -3,14 +3,10 @@ package eu.cts.testproiect;
 import static org.junit.Assert.*;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import eu.cts.proiect.LoggerSingleton;
@@ -22,10 +18,6 @@ public class TestLoggerSingleton {
 	@Before
 	public void setUp() throws Exception {
 		logger = LoggerSingleton.getInstance();
-	}
-
-	@After
-	public void tearDown() throws Exception {
 	}
 
 	//functia 9
@@ -43,6 +35,7 @@ public class TestLoggerSingleton {
 		FileReader fr;
 		try {
 			fr = new FileReader("res/logs.txt");
+			@SuppressWarnings("resource")
 			BufferedReader br = new BufferedReader(fr);
 			while ((line = br.readLine())!=null){
 				fin = line;
