@@ -7,12 +7,9 @@ import static org.mockito.Mockito.when;
 import java.util.Date;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-import eu.cts.proiect.Meeting;
 import eu.cts.proiect.Task;
 
 public class TestTask {
